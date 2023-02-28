@@ -1,0 +1,37 @@
+.profilePic{
+    width: 8rem;
+    height: 8rem;
+    border-radius: 5rem;
+    margin-top: 2rem;
+}
+
+.profilepage{
+    max-width: 65rem;
+    margin: 0px auto;
+}
+.detailInfo
+{
+    display: flex;
+    justify-content: center;
+    gap: 10rem   ;
+    margin: 4rem auto;
+    border-bottom: 2px solid #d3d6db;
+}
+
+.followers{
+    display: flex;
+    gap: 1rem;
+}
+
+/* The post gallary */
+.posts{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.post{
+   width: 30%;
+   height: 30%;
+   margin-bottom: 3rem;
+}
