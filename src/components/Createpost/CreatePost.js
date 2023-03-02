@@ -83,6 +83,7 @@ const CreatePost = () => {
                    <div class="btn">
                     <span>File</span>
                     <input type="file"
+                     onChange={(e) => setImage(e.target.files[0])}
                     />
                    </div>
                   <div class="file-path-wrapper">
