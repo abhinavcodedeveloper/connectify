@@ -13,16 +13,16 @@ import Home from "./components/Home/Home";
 export const UserContext = createContext()
 const Routing = ()=>{
   const Navigate = useNavigate();
-  // const [state,dispatch] = useContext(UserContext)
+  const {state,dispatch} = useContext(UserContext)
 
   useEffect(()=>{
     const user = JSON.parse(localStorage.getItem("user"))
     // console.log(typeof(user),user)
     if(user){
-      // dispatch({
-      //   type:"USER",
-      //   payload:user
-      // })
+      dispatch({
+        type:"USER",
+        payload:user
+      })
       Navigate('/')
     }
     else{
