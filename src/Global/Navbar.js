@@ -1,24 +1,85 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
-import './Navbar.css'
+import React, { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import "./Navbar.css";
+import { UserContext } from "../App";
+
+
 const Navbar = () => {
+  const Navigate = useNavigate();
+  const { state, dispatch } = useContext(UserContext);
+  // console.log(state)
+  const renderList = () => {
+   
+    console.log(state)
+    if (state) {
+      console.log("hello")
+      //state has the user details then he should see the create post home and profile
+      return [
+        <li>
+          <Link to="/createpost" className="link">
+            <span>
+              <i className="fa-sharp fa-solid fa-square-plus"></i> Create Post
+            </span>
+          </Link>
+        </li>,
+
+        <li>
+          <Link to="/profile" className="link">
+            <span>
+              <i className="fa-solid fa-user"></i> Profile
+            </span>
+          </Link>
+        </li>,
+        <li>
+          <button onClick={() => {
+            localStorage.clear();
+            dispatch({
+              type: "CLEAR",
+            });
+            Navigate("/signin");
+          }} id="btn">
+            Logout
+          </button>
+        </li>,
+      ];
+    } 
+    else {
+      return [
+        <li>
+          <Link to="/signin" className="link">
+            <span>
+              <i className="fa-solid fa-arrow-right-from-bracket"></i> Signin
+            </span>
+          </Link>
+        </li>,
+        <li>
+          <Link to="/signup" className="link">
+            <span>
+              <i className="fa-solid fa-arrow-right-from-bracket"></i> Signup
+            </span>
+          </Link>
+        </li>,
+      ];
+    }
+  };
   return (
     <div>
-    <nav>
-    <div className="nav-wrapper" id='Nav'>
-     
-      <Link to="/" className="brand-logo left large">Connectify</Link>
-      <ul id="nav-mobile" className="right hide-on-med-and-down">
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/signin">Signin</Link></li>
-        <li><Link to="/signup">Signup</Link></li>
-        <li><Link to="/profile">Profile</Link></li>
-        <li><Link to="/createpost">Createpost</Link></li>
-      </ul>
+      <div className="Container">
+        <Link to={state ? "/" : "/signin"} className="link">
+          <div className="left">Connectify</div>
+        </Link>
+        <ul className="center">
+          {renderList()}
+        </ul>
+        <div className="right">
+          <input type="text" placeholder="Search" />
+          <button>
+            <i className="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+      </div>
     </div>
-  </nav>   
-</div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import M from "materialize-css";
-import "../styles/Createpost.css";
-
-const Createpost = () => {
+import './CreatePost.css'
+import M from 'materialize-css'
+const CreatePost = () => {
   const Navigate = useNavigate();
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
@@ -63,45 +62,30 @@ const Createpost = () => {
       });
   };
   return (
-    <div className="createpost">
-      <h1>Create Your Post</h1>
-      <div className="post">
-        <input
-          className="title"
-          type="text"
-          name="title"
-          placeholder="TITLE"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-
-        <input
-          className="body"
-          type="text"
-          name="body"
-          placeholder="BODY"
-          value={body}
-          onChange={(e) => setBody(e.target.value)}
-        />
-
-        <div className="file-field input-field">
-          <div className="btn">
-            <span>Upload</span>
-            <input type="file" onChange={(e) => setImage(e.target.files[0])} />
-          </div>
-          <div className="file-path-wrapper">
-            <input className="file-path validate" type="text" />
-          </div>
+    <div>
+        <div className="createPost">
+            <h1>Create Your Post</h1>
+            <div className='inputbox'>
+                <input className="title"
+                  type="text"
+                  name="title"
+                  placeholder="Title"
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}/>
+                <input className="body"
+                  type="text"
+                  name="body"
+                  placeholder="Body"
+                  value={body}
+                  onChange={(e) => setBody(e.target.value)}/>
+                <div className='uploaddiv'>
+                    <input type="file" onChange={(e) => setImage(e.target.files[0])} placeholder='Image Url'/>
+                </div>
+                <button onClick={() => postdata()}>Upload</button>
+            </div>
         </div>
-        <button
-          className="btn waves-effect waves-light"
-          onClick={() => postdata()}
-        >
-          Submit
-        </button>
-      </div>
     </div>
-  );
-};
+  )
+}
 
-export default Createpost;
+export default CreatePost

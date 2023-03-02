@@ -1,17 +1,69 @@
-.brand-logo{
-    font-family:  'Grand Hotel', cursive;
-    margin-left: 1rem;
-    font-size: 3rem !important ;
-  text-align: center;
+.Container{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 80px;
+    margin:  0px 0px 0px 0px !important;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: aliceblue ;
+    color: rgb(124, 124, 124);
+   width: 100% !important;
+}
+.link{
+    color: rgb(124, 124, 124) !important;
+}
+.left{
+    font-size: 40px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.center{
+    display: flex;
+    gap: 10px;      
+    font-size: 18px;
+    align-items: center;
+    font-weight: 500;
+    cursor: pointer;
+   
+}
+.center span{
+    padding: 10px 20px;
+    border-radius: 15px;
+   
+}
+.center i{
+    padding: 0px 5px 0px 0px;
+    font-size: 20px;
+}
+.link span:hover{
+    color: rgb(0, 115, 255);
+    background-color: rgb(226, 245, 255);
+}
+.right{
+    display: flex;
+    align-items: center;
+   
+}
+.right input{
+    height: 30px;
+    margin: 10px;
+    width: 200px;
+    border: 3px solid rgb(124, 124, 124);
+    outline: none;
+    border-radius: 10px;
+    padding: 0px 10px;
+}
+.right button{
+    height: 36px;
+    font-size: 20px;
+    border: 3px solid rgb(124, 124, 124);
+    border-radius: 10px;
+    padding: 0px 10px;
+    cursor: pointer;
+    color: rgb(124, 124, 124);
+    background-color: white;
+
     
 }
-
-#Nav
-{
-    background-color:#9896f1 ;
-    height: 5rem    ;
-}
-
 li{
-    font-size: large !important;
+    list-style-type: none;
 }
