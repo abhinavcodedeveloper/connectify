@@ -2,7 +2,7 @@
     margin: 20px auto;
     width: 500px;
     background-color: aliceblue;
-    align-items: center;
+    /* align-items: center; */
     display: flex;
     flex-direction: column;
     padding: 10px;
@@ -37,7 +37,7 @@
 .description{
     width: 400px;
     font-size: 18px;
-    margin: 20px 0px;
+    margin: 0.7rem 0rem;
 }
 .commentsbox{
     width: 80%;

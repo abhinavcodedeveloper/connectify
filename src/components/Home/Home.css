@@ -15,6 +15,11 @@
     z-index: 1;
     
 }
+
+.title{
+    margin: 0.5rem 0;
+    align-items: center;
+}
 .sidebardiv{
     grid-area: sidebar;
     display: flex;
@@ -41,4 +46,18 @@
     align-items: center;
     flex-direction: column;
     margin: 20px auto;
+}
+
+.like-unlike{
+    display: flex ;
+    /* align-items: flex-start; */
+    flex-wrap: wrap;
+    /* justify-content: space-around; */
+    gap: 1rem;
+    align-items: start;
+
+}
+
+.like-unlike i{
+    cursor: pointer;
 }

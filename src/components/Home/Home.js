@@ -1,14 +1,16 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState,useEffect,useContext} from 'react'
 import {useNavigate} from 'react-router-dom'
 import './Home.css'
 import '../../Global/Centercard.css'
 import '../../Global/Sidebar.css'
 import '../../Global/Profilebox.css'
+import {UserContext} from '../../App'
 
 
 
 const Home = () => {
   const [data,setData] = useState([]);
+  const {state,dispatch} = useContext(UserContext);
   useEffect(()=>{
     fetch('/allposts',{
       method:"get",
@@ -20,6 +22,58 @@ const Home = () => {
       setData(result.posts)
     })
   },[])
+
+  // like post logic
+  const likePost = (Id)=>{
+    fetch("/likepost",{
+      method:"put",
+      headers:{
+        "Content-Type":"application/json",
+        "Authorization": "Bearer " + localStorage.getItem("jwt")
+      },
+      body:JSON.stringify({
+        postId:Id 
+      })
+    }).then(res=>res.json())
+    .then(result=>{
+      // console.log(result)
+      const newData = data.map(item=>{
+        if(item._id==result._id){
+          return result
+        }
+        else{ 
+          return item
+        }
+    })
+    // console.log(newData)
+    setData(newData)
+    })
+  }
+  const dislikePost = (Id)=>{
+    fetch("/dislikepost",{
+      method:"put",
+      headers:{
+        "Content-Type":"application/json",
+        "Authorization": "Bearer " + localStorage.getItem("jwt")
+      },
+      body:JSON.stringify({
+        postId:Id 
+      })
+    }).then(res=>res.json())
+    .then(result=>{
+      // console.log(data)
+      const newData = data.map(item=>{
+          if(item._id==result._id){
+            return result
+          }
+          else{
+            return item
+          }
+      })
+      // console.log(newData)
+      setData(newData)
+    })
+  }
 
   return (  
     <div className='home'>
@@ -55,6 +109,17 @@ const Home = () => {
                   <h2>{item.postedby.name}</h2>
               </span>
               <img src={item.photo} alt="" className='postimg' />
+              <div className='like-unlike'>
+                {
+                  item.likes.includes(state._id)
+                  ?
+                  <i className="small material-icons" onClick={()=>dislikePost(item._id)}>thumb_down</i>
+                  :
+                  <i className="small material-icons" onClick={()=>likePost(item._id)}>thumb_up</i>
+                }
+                </div>
+              
+              <span className='title'>{item.likes.length} likes</span>
               <span className='title'>{item.title}</span>
               <span className='description'>{item.body}</span>
               <span className='commentsbox'>
