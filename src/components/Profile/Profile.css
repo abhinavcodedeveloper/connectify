@@ -10,10 +10,6 @@
     align-items: center;
     
 }
-
-.userkidetail{
-    display: flex;
-}
 .profile h1{
     margin: 20px;
     font-size: 50px;
@@ -32,26 +28,81 @@
     z-index: 1;
 }
 .details{
+    width: 100%;
     background-color: rgb(181, 215, 244);
-    padding: 100px;
-    padding-bottom: 60px;
+    padding: 60px;
+    padding-bottom: 30px;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    border-radius: 0px 0px 5px 5px;
-    width: 300px;
-    justify-content: center;
     border-top: 10px solid rgb(1, 35, 65);
-
-   
 }
 .details div{
-    margin: 0px auto;
+    margin: 0px;
     font-size: 28px;
-    width: 400px;
-   
+    align-items: start;   
 }
 .detaildiv span{
     font-size: 24px;
     color: rgb(124, 124, 124);
+}
+.infos{
+    display: flex;
+    width: 100%;
+    border-top: 7.5px solid rgb(1, 35, 65);
+    justify-content: space-evenly;
+    background-color: rgb(181, 215, 244);
+
+}
+.infobox{
+    background-color: rgb(211, 233, 252);
+    padding: 10px 19.5px;
+    border: 2.5px solid rgb(1, 35, 65);
+    border-top: 0px;
+    border-radius: 8px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.infos .infotitle{
+    font-size: 26px;
+    font-weight: 700;
+    color: black;
+}
+.infos span{
+    font-size: 25px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(124, 124, 124);
+
+}
+.userposts{
+    width: 1200px;
+    padding: 50px;
+    margin: 50px auto;
+    border: 10px solid rgb(1, 35, 65);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(181, 215, 244);
+}
+.userposts h1{
+    width: 40%;
+    margin: 20px auto;
+    background-color: aliceblue;
+    text-align: center;
+    padding: 20px;
+    font-size: 70px;
+    border-radius: 15px;
+    font-style: italic;
+    font-weight: 400;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.userposts .centrediv{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items:flex-start;
+    justify-content: space-around;
 }
