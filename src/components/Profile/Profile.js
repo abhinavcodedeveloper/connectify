@@ -49,13 +49,13 @@ const Profile = () => {
                 data.map(item=>{
                     // console.log(item)
                     return (
-                    <div className='cardcontainer'>
-                    <span className='cardhead'>
+                    <div className=''>
+                    {/* <span className='cardhead'>
                         <img src="https://cdn.cdnlogo.com/logos/c/18/ChatGPT_800x800.png" alt="" />
                         <h2>{item.postedby.name}</h2>
-                    </span>
+                    </span> */}
                     <img src={item.photo} alt="" className='postimg' />
-                    <span className='title'>{item.title}</span>
+                    {/* <span className='title'>{item.title}</span>
                     <span className='description'>{item.body}</span>
                     <span className='commentsbox'>
                         <h3>Comments</h3>
@@ -64,7 +64,7 @@ const Profile = () => {
                             <input type="text" placeholder='Comment here'/>
                             <i className="fa-sharp fa-solid fa-paper-plane"></i>
                         </div>
-                    </span>
+                    </span> */}
                 </div>
                     )
                 })

@@ -1,3 +1,6 @@
+/* .userkidetail{
+    background-color: #9896f1 !important;
+} */
 .profile{
     border: 10px solid rgb(1, 35, 65);
     display: flex;
@@ -81,11 +84,11 @@
     width: 1200px;
     padding: 50px 10px;
     margin: 50px auto;
-    border: 10px solid rgb(1, 35, 65);
+    /* border: 10px solid rgb(1, 35, 65); */
     border-radius: 15px;
     display: flex;
     flex-direction: column;
-    background-color: rgb(181, 215, 244);
+    /* background-color: rgb(181, 215, 244); */
 }
 .userposts h1{
     width: 40%;
@@ -106,4 +109,7 @@
     align-items:flex-start;
     justify-content: space-around;
     flex-direction: row;
+}
+.userposts img{
+    width: 300px;
 }

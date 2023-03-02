@@ -38,6 +38,7 @@ const Navbar = () => {
             });
             Navigate("/signin");
           }} id="btn">
+            <i className="fa-solid fa-arrow-right-from-bracket"></i>
             Logout
           </button>
         </li>,

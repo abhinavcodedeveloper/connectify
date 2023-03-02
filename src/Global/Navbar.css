@@ -67,3 +67,10 @@
 li{
     list-style-type: none;
 }
+button{
+    background-color: transparent;
+    color: rgb(124, 124, 124);
+    font-size: 20px;
+    cursor: pointer;
+    border: none;    
+}

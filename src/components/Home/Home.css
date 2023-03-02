@@ -1,10 +1,14 @@
+
 .home{
     display: grid;
     grid-template-columns: 22% 56% 22%;
     grid-template-areas: 
     "nav nav nav"
-    "sidebar centre sidefooter";    
-
+    "sidebar centre sidefooter";   
+    /* background-color: #9896f1 !important; */
+    /* background: url("");  */
+    /* background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); */
+    
 }
 .navbardiv{
     width: 100%;
