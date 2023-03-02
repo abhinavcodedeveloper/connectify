@@ -72,10 +72,7 @@ const Signin = () => {
                 <button onClick={()=>signindata()} id="btn">Log in</button>
             </div>
         </div>
-        <div className="exists">
-            <span>Create new Account</span>
-            <Link to="/signup" className='link'>Signup</Link>
-        </div>
+       
     </div>
   )
 }

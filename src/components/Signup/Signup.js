@@ -49,7 +49,6 @@ const Signup = () => {
   }
   return (
     <div>
-    <div><h1 className='connectify'>Connectify</h1></div>
         <div className="signup">
             <h1>Signup</h1>
             <div className='inputdiv'>
@@ -80,10 +79,7 @@ const Signup = () => {
                 <button onClick={()=>signupdata()}>Sign up</button>
             </div>
         </div>
-        <div className="exists">
-            <span>Already Have an Account </span>
-            <Link to="/signin" className='link'>Signin</Link>
-        </div>
+      
     </div>
   )
 }

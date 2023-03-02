@@ -79,7 +79,16 @@ const CreatePost = () => {
                   value={body}
                   onChange={(e) => setBody(e.target.value)}/>
                 <div className='uploaddiv'>
-                    <input type="file" onChange={(e) => setImage(e.target.files[0])} placeholder='Image Url'/>
+                <div class="file-field input-field">
+                   <div class="btn">
+                    <span>File</span>
+                    <input type="file"
+                    />
+                   </div>
+                  <div class="file-path-wrapper">
+                     <input class="file-path validate" type="text"/>
+                  </div>
+                  </div>
                 </div>
                 <button onClick={() => postdata()}>Upload</button>
             </div>

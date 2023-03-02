@@ -10,6 +10,10 @@
     align-items: center;
     
 }
+
+.userkidetail{
+    display: flex;
+}
 .profile h1{
     margin: 20px;
     font-size: 50px;
