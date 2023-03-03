@@ -49,6 +49,8 @@ const Home = () => {
     setData(newData)
     })
   }
+
+  // Disliking the post
   const dislikePost = (Id)=>{
     fetch("/dislikepost",{
       method:"put",
@@ -64,6 +66,7 @@ const Home = () => {
       // console.log(data)
       const newData = data.map(item=>{
           if(item._id==result._id){
+            // updated 
             return result
           }
           else{
@@ -74,6 +77,50 @@ const Home = () => {
       setData(newData)
     })
   }
+  const commentPost = (text,postId)=>{
+    fetch("/comments",{
+      method:"put",
+      headers:{
+        "Content-Type":"application/json",
+        "Authorization": "Bearer " + localStorage.getItem("jwt")
+      },
+      body:JSON.stringify({
+        text,
+        postId
+      })
+    }).then(res=>res.json())
+    .then(result=>{
+      // console.log(data)
+      const newData = data.map(item=>{
+          if(item._id==result._id){
+            // updated 
+            return result
+          }
+          else{
+            return item
+          }
+      })
+      // console.log(newData)
+      setData(newData)
+    })
+  }
+
+  // ******deleting the post*********
+  const deletePost = (postid)=>{
+    fetch(`/deletepost/${postid}`,{
+      method:"delete",
+      headers:{
+        "Authorization":"Bearer "+localStorage.getItem("jwt")
+      }
+    }).then(res=>res.json())
+    .then(result=>{
+      // console.log(result)
+      const newData = data.filter((item)=>{
+        return item._id!=result._id
+      })
+      setData(newData)
+    })
+  } 
 
   return (  
     <div className='home'>
@@ -107,6 +154,14 @@ const Home = () => {
               <span className='cardhead'>
                   <img src="https://cdn.cdnlogo.com/logos/c/18/ChatGPT_800x800.png" alt="" />
                   <h2>{item.postedby.name}</h2>
+                  {
+                    (item.postedby._id == state._id)
+                    ?
+                    <i id="Delete" className="small material-icons" onClick={()=>deletePost(item._id)}>content_cut</i>
+                    :
+                    <i id="Delete" className="small material-icons">done</i>
+
+                  }
               </span>
               <img src={item.photo} alt="" className='postimg' />
               <div className='like-unlike'>
@@ -123,12 +178,24 @@ const Home = () => {
               <span className='title'>{item.title}</span>
               <span className='description'>{item.body}</span>
               <span className='commentsbox'>
+                {/* Commenting on the post */}
                   <h3>Comments</h3>
-                  <span><b> Mr. Beast:</b>Great!!!</span>
-                  <div className='commenthere'>    
+                  {
+                    item.comments.map(data=>{
+                     
+                      return(
+                        <h6 key={data._id}><span><b>{data.postedby.name} </b>{data.text}</span></h6>
+                      )
+                    })
+                  }
+                  <form className='commenthere' onSubmit={(e)=>{
+                    e.preventDefault()
+                    // console.log(e.target[0].value)
+                    commentPost(e.target[0].value,item._id)
+                  }}>    
                       <input type="text" placeholder='Comment here'/>
                       <i className="fa-sharp fa-solid fa-paper-plane"></i>
-                  </div>
+                  </form>
               </span>
           </div>
             )

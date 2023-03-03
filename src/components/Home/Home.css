@@ -20,6 +20,7 @@
     
 }
 
+
 .title{
     margin: 0.5rem 0;
     align-items: center;
@@ -63,5 +64,9 @@
 }
 
 .like-unlike i{
+    cursor: pointer;
+}
+
+#Delete{
     cursor: pointer;
 }
