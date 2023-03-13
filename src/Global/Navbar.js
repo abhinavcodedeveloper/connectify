@@ -10,9 +10,7 @@ const Navbar = () => {
   // console.log(state)
   const renderList = () => {
    
-    console.log(state)
     if (state) {
-      console.log("hello")
       //state has the user details then he should see the create post home and profile
       return [
         <li>

@@ -6,8 +6,10 @@ import Signin from './components/Signin/Signin';
 import Signup from './components/Signup/Signup';
 import Profile from './components/Profile/Profile';
 import Createpost from "./components/Createpost/CreatePost";
+
 import {initialState,reducer} from './reducers/userReducer'
 import Home from "./components/Home/Home";
+import UserProfile from "./components/UserProfile/UserProfile";
 
 
 export const UserContext = createContext()
@@ -23,7 +25,6 @@ const Routing = ()=>{
         type:"USER",
         payload:user
       })
-      Navigate('/')
     }
     else{
       Navigate('/signin')
@@ -37,6 +38,7 @@ const Routing = ()=>{
     <Route exact path='/signup' element={<Signup/>}/> 
     <Route exact path='/profile' element={<Profile/>}/> 
     <Route exact path='/createpost' element={<Createpost/>}/> 
+    <Route exact path='/profile/:id' element={<UserProfile/>}/> 
     </Routes>
   )
 
