@@ -24,7 +24,7 @@ const Signin = () => {
     fetch('/signin',{
         method:"post",
         headers:{
-            "Content-Type":"application/json"
+          "Content-Type":"application/json"
         },
         body:JSON.stringify({
             email,
@@ -72,7 +72,6 @@ const Signin = () => {
                 <button onClick={()=>signindata()} id="btn">Log in</button>
             </div>
         </div>
-       
     </div>
   )
 }

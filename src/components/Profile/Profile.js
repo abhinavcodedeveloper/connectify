@@ -14,7 +14,15 @@ const Profile = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
+        // console.log(result);
+        // dispatch({
+        //   type: "UPDATE",
+        //   payload: {
+        //     followers: result.followers,
+        //     following: result.following,
+        //   },
+        // });
+        // localStorage.setItem("user", JSON.stringify(result));
         setData(result);
       });
   }, []);
@@ -23,12 +31,15 @@ const Profile = () => {
       {data ? (
         <div className="userkidetail">
           <div className="profile">
-            {console.log(data)}
+            {/* {console.log(data)} */}
             <h1>Profile</h1>
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9T8An4X3aOY1Lgo5Ax18mf47hXPPQya5-mApv6J-hdm-aoUALUX5pYyp9Ll-9KWIjTTg&usqp=CAU"
               alt=""
             />
+            {
+              console.log(data)
+            }
             <div className="details">
               <div className="detaildiv">
                 <b>Name: </b>
@@ -46,11 +57,11 @@ const Profile = () => {
             <div className="infos">
               <span className="infobox">
                 <span className="infotitle">Followers</span>
-                <span>{20}</span>
+                <span>{state?state.followers.length:"0"}</span>
               </span>
               <span className="infobox">
                 <span className="infotitle">Following</span>
-                <span>{20}</span>
+                <span>{state?state.following.length:"0"}</span>
               </span>
               <span className="infobox">
                 <span className="infotitle">Posts</span>
