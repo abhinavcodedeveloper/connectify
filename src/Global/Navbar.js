@@ -29,6 +29,13 @@ const Navbar = () => {
           </Link>
         </li>,
         <li>
+          <Link to="/friendPosts" className="link">
+            <span>
+              <i className="fa-solid fa-user"></i> Following Posts
+            </span>
+          </Link>
+        </li>,
+        <li>
           <button onClick={() => {
             localStorage.clear();
             dispatch({

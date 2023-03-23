@@ -10,6 +10,8 @@ import Createpost from "./components/Createpost/CreatePost";
 import {initialState,reducer} from './reducers/userReducer'
 import Home from "./components/Home/Home";
 import UserProfile from "./components/UserProfile/UserProfile";
+import FriendsPosts from "./components/FriendsPosts/FriendsPosts";
+
 
 
 export const UserContext = createContext()
@@ -39,6 +41,7 @@ const Routing = ()=>{
     <Route exact path='/profile' element={<Profile/>}/> 
     <Route exact path='/createpost' element={<Createpost/>}/> 
     <Route exact path='/profile/:id' element={<UserProfile/>}/> 
+    <Route exact path='/friendPosts' element={<FriendsPosts/>}/> 
     </Routes>
   )
 

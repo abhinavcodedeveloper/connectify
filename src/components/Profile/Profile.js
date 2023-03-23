@@ -2,9 +2,12 @@ import React, { useState, useEffect, useContext } from "react";
 import "./Profile.css";
 import "../../Global/Profilebox.css";
 import { UserContext } from "../../App";
+import {M} from 'materialize-css'
 const Profile = () => {
   const [data, setData] = useState(null);
+  const [profile, setProfile] = useState(null);
   const { state, dispatch } = useContext(UserContext);
+  
   useEffect(() => {
     fetch("/mypost", {
       method: "get",
@@ -14,15 +17,7 @@ const Profile = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        // console.log(result);
-        // dispatch({
-        //   type: "UPDATE",
-        //   payload: {
-        //     followers: result.followers,
-        //     following: result.following,
-        //   },
-        // });
-        // localStorage.setItem("user", JSON.stringify(result));
+        console.log(result);
         setData(result);
       });
   }, []);
@@ -31,12 +26,15 @@ const Profile = () => {
       {data ? (
         <div className="userkidetail">
           <div className="profile">
+
             {/* {console.log(data)} */}
             <h1>Profile</h1>
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9T8An4X3aOY1Lgo5Ax18mf47hXPPQya5-mApv6J-hdm-aoUALUX5pYyp9Ll-9KWIjTTg&usqp=CAU"
+              src={state.pic}
               alt=""
             />
+            
+            <button className="btn">UPLOAD PIC</button>
             {
               console.log(data)
             }

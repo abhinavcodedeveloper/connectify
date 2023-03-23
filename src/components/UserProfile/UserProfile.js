@@ -13,7 +13,7 @@ const UserProfile = () => {
     fetch(`/user/${id}`, {
       method: "get",
       headers: {
-        Authorization: "Bearer " + localStorage.getItem("jwt"),
+        "Authorization": "Bearer " + localStorage.getItem("jwt"),
       },
     })
       .then((res) => res.json())
