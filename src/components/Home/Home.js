@@ -132,13 +132,7 @@ const Home = () => {
             alt=""
             className="posterimg"
           />
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9T8An4X3aOY1Lgo5Ax18mf47hXPPQya5-mApv6J-hdm-aoUALUX5pYyp9Ll-9KWIjTTg&usqp=CAU"
-            alt=""
-            className="profileimg"
-          />
-          <h2>Rock</h2>
-          <span>5M friends</span>
+          <h2>{state?state.name:"Username"}</h2>
           <button>My Profile</button>
         </div>
         <div className="sidecontainer">
@@ -224,7 +218,7 @@ const Home = () => {
                     <h6 key={data._id}>
                       <span>
                         <b>{data.postedby.name} </b>
-                        {data.text}
+                        {data.text()}
                       </span>
                     </h6>
                   );

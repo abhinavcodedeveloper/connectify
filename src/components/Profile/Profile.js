@@ -41,7 +41,7 @@ const Profile = () => {
             <div className="details">
               <div className="detaildiv">
                 <b>Name: </b>
-                <span>{state ? state.name : "loading"}</span>
+                <span>{state?state.name : "loading"}</span>
               </div>
               <div className="detaildiv">
                 <b>UserName: </b>
@@ -49,7 +49,7 @@ const Profile = () => {
               </div>
               <div className="detaildiv">
                 <b>Email: </b>
-                <span>{state ? state.email : "loading"}</span>
+                <span>{state?state.email : "loading"}</span>
               </div>
             </div>
             <div className="infos">

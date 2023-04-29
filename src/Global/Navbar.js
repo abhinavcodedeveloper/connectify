@@ -2,11 +2,13 @@ import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import { UserContext } from "../App";
+import { Input } from "@chakra-ui/react";
 
 
 const Navbar = () => {
   const Navigate = useNavigate();
   const { state, dispatch } = useContext(UserContext);
+  
   // console.log(state)
   const renderList = () => {
    
@@ -32,6 +34,13 @@ const Navbar = () => {
           <Link to="/friendPosts" className="link">
             <span>
               <i className="fa-solid fa-user"></i> Following Posts
+            </span>
+          </Link>
+        </li>,
+        <li>
+          <Link to="/messenger" className="link">
+            <span>
+            <i className="fa-solid fa-message" style={{color:"#7b808a"}}></i> Messenger
             </span>
           </Link>
         </li>,
@@ -78,7 +87,7 @@ const Navbar = () => {
           {renderList()}
         </ul>
         <div className="right">
-          <input type="text" placeholder="Search" />
+          < Input type="text" placeholder="Search" />
           <button>
             <i className="fa-solid fa-magnifying-glass"></i>
           </button>

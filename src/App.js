@@ -1,4 +1,4 @@
-import React,{useEffect,createContext,useReducer,useContext} from "react";
+import React,{useEffect,createContext,useReducer,useContext,useState  } from "react";
 import  ReactDOM  from "react-dom/client";
 import Navbar from './Global/Navbar';
 import {BrowserRouter,Route,useNavigate,Routes} from 'react-router-dom'
@@ -11,6 +11,7 @@ import {initialState,reducer} from './reducers/userReducer'
 import Home from "./components/Home/Home";
 import UserProfile from "./components/UserProfile/UserProfile";
 import FriendsPosts from "./components/FriendsPosts/FriendsPosts";
+import Chatpage from "./components/Chatpage/Chatpage";
 
 
 
@@ -42,6 +43,7 @@ const Routing = ()=>{
     <Route exact path='/createpost' element={<Createpost/>}/> 
     <Route exact path='/profile/:id' element={<UserProfile/>}/> 
     <Route exact path='/friendPosts' element={<FriendsPosts/>}/> 
+    <Route exact path='/messenger' element={<Chatpage/>}/> 
     </Routes>
   )
 
@@ -49,12 +51,20 @@ const Routing = ()=>{
 function App() {
 
   const [state,dispatch] = useReducer(reducer,initialState)
+  // chatselect :- a state which defines the selected part of a chat
+  const [chatselect,setChatselect] = useState()
+  // chats:- a state which defines all the chats available with the user
+  const [chats,setChats] = useState([])
   // const [count,setCount] = useState(initial state); here reducer helps us to dispatch or update the value according to our need
   return (
     <UserContext.Provider value={
       {
         state,
-        dispatch
+        dispatch,
+        chatselect,
+        setChatselect,
+        chats,
+        setChats
       }
     }>
   <BrowserRouter>
