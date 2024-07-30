@@ -101,7 +101,7 @@ const Mychats = ({fetchAgain}) => {
               <Text>
               {!chat.isGroupChat
               ?
-             checkGroupchat(logged,chat.users)
+             checkGroupchat(state,chat.users)
             :
             chat.chatName}
             </Text>

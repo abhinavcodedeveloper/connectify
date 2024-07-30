@@ -2,6 +2,7 @@ import React, { useState,useContext } from "react";
 import {Link,useNavigate} from 'react-router-dom'
 // import Connectify from '../other/Connectify'
 import './Signin.css'
+// import '../../index.css' 
 import '../other/Connectify.css'
 import M from 'materialize-css'
 import { UserContext } from "../../App";
@@ -52,9 +53,8 @@ const Signin = () => {
     
   }
   return (
-    <div>
-          <div><h1 className='connectify'>Connectify</h1></div>
-        <div className="signin">
+    <div className="bg-gradient-to-r from-purple-500 to-pink-500 h-screen w-full fixed" >
+        <div className="signin bg-black text-white flex flex-col justify-center items-center mt-[7rem]">
             <h1>Signin</h1>
             <div className='inputdiv'>
                 <input type="text"

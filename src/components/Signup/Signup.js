@@ -86,10 +86,10 @@ if(url){
     
   }
   return (
-    <div>
-        <div className="signup">
-            <h1>Signup</h1>
-            <div className='inputdiv'>
+    <div  className="bg-gradient-to-r from-purple-500 to-pink-500 h-screen w-full fixed" >
+        <div className="signup bg-black text-white flex flex-col justify-center items-center mt-[7rem]">
+            <h1> Signup</h1>
+            <div className='inputdiv '>
                 <input type="text"
                   name="email"
                   id="takingInput"

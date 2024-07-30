@@ -3,6 +3,7 @@ import "./Profile.css";
 import "../../Global/Profilebox.css";
 import { UserContext } from "../../App";
 import {M} from 'materialize-css'
+import { Box } from "@chakra-ui/react";
 const Profile = () => {
   const [data, setData] = useState(null);
   const [profile, setProfile] = useState(null);
@@ -22,7 +23,7 @@ const Profile = () => {
       });
   }, []);
   return (
-    <>
+    <Box bg='#d3d6db'>
       {data ? (
         <div className="userkidetail">
           <div className="profile">
@@ -34,10 +35,7 @@ const Profile = () => {
               alt=""
             />
             
-            <button className="btn">UPLOAD PIC</button>
-            {
-              console.log(data)
-            }
+            
             <div className="details">
               <div className="detaildiv">
                 <b>Name: </b>
@@ -83,7 +81,7 @@ const Profile = () => {
       ) : (
         <h1>LOADING</h1>
       )}
-    </>
+    </Box>
   );
 };
 

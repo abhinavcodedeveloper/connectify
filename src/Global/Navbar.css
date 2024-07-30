@@ -4,12 +4,11 @@
     padding: 15px 50px;
     margin:  0px 0px 0px 0px !important;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* background-color: aliceblue ; */
     color: rgb(124, 124, 124);
    width: 100% !important;
 }
 .link{
-    color: rgb(124, 124, 124) !important;
+    color: rgb(33, 32, 32) !important;
 }
 .left{
     font-size: 35px;  
@@ -35,7 +34,7 @@
     font-size: 20px;
 }
 .link span:hover{
-    color: rgb(0, 115, 255);
+    color: rgb(105, 109, 114);
     background-color: rgb(226, 245, 255);
 }
 .right{

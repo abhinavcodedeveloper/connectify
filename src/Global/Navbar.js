@@ -15,6 +15,7 @@ const Navbar = () => {
     if (state) {
       //state has the user details then he should see the create post home and profile
       return [
+        
         <li>
           <Link to="/createpost" className="link">
             <span>

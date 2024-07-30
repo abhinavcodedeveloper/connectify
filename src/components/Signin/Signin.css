@@ -11,6 +11,12 @@
     
     
 }
+
+.signinbg{
+    background-image: url('../../../public/signinbg.avif');
+    background-repeat: no-repeat;
+    background-size:  100vw;
+}
 .signin h1{
     font-size: 50px;
     text-align: center;

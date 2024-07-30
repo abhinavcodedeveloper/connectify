@@ -1,11 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 .signup{
     margin: 10px auto 0px;
-    margin-bottom: 10px;
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
     width: 400px;
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 10px;
     border-radius: 15px;
     letter-spacing: 1px;
 

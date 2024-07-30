@@ -4,15 +4,17 @@
 .profile{
     border: 10px solid rgb(1, 35, 65);
     display: flex;
-    margin: 50px auto;    
+    margin:  auto;    
     flex-direction: column;
     width: 500px;
     justify-content: center;
     background-color: aliceblue;
     border-radius: 15px;
     align-items: center;
-    
+    position: relative;
+    top: 4rem;
 }
+
 
 #follow{
     margin-left: 40rem;
@@ -87,7 +89,7 @@
 .userposts{
     width: 1200px;
     padding: 50px 10px;
-    margin: 50px auto;
+    margin: 50px auto 0 auto;
     /* border: 10px solid rgb(1, 35, 65); */
     border-radius: 15px;
     display: flex;

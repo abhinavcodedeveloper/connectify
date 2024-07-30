@@ -5,6 +5,7 @@ import "../../Global/Centercard.css";
 import "../../Global/Sidebar.css";
 import "../../Global/Profilebox.css";
 import { UserContext } from "../../App";
+import NewsBox from '../NewsBox/NewsBox'
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -218,7 +219,7 @@ const Home = () => {
                     <h6 key={data._id}>
                       <span>
                         <b>{data.postedby.name} </b>
-                        {data.text()}
+                        {data.text}
                       </span>
                     </h6>
                   );
@@ -240,32 +241,7 @@ const Home = () => {
         })}
       </div>
       <div className="sidefooterdiv">
-        <div className="sidecontainer">
-          <span>
-            <i className="fa-solid fa-paper-plane"></i> My Posts
-          </span>
-          <span>
-            <i className="fa-solid fa-chart-line"></i> Activity
-          </span>
-          <span>
-            <i className="fa-solid fa-shop"></i> Marketplace
-          </span>
-          <span>
-            <i className="fa-solid fa-memory"></i> Memories
-          </span>
-          <span>
-            <i className="fa-solid fa-calendar-days"></i> Event
-          </span>
-          <span>
-            <i className="fa-solid fa-circle-play"></i>Live Videos
-          </span>
-          <span>
-            <i className="fa-solid fa-hand-holding-heart"></i>Support
-          </span>
-          <span>
-            <i className="fa-sharp fa-solid fa-gear"></i>Settings
-          </span>
-        </div>
+         <NewsBox/>
       </div>
     </div>
   );

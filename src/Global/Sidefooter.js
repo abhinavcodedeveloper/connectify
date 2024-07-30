@@ -1,9 +1,10 @@
 import React from 'react'
-import Sidebar from './Sidebar'
+import NewsBox from '../components/NewsBox/NewsBox'
+import '../components/NewsBox/NewsBox.scss'
 const Sidefooter = () => {
   return (
     <div>
-      <Sidebar/>
+      <NewsBox/>
     </div>
   )
 }

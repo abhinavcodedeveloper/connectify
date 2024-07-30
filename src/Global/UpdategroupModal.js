@@ -188,7 +188,6 @@ const UpdategroupModal = ({ fetchAgain, setFetchAgain,messages }) => {
         setChatselect()
       }
       else{
-        
         setChatselect(data)
       }
       setFetchAgain(!fetchAgain)
@@ -197,14 +196,13 @@ const UpdategroupModal = ({ fetchAgain, setFetchAgain,messages }) => {
     })
     .catch(err=>{
       toast({
-        title: "Can't remove user",
-        status: "warning",
+        title: "User removed",
+        status: "success",
         duration: 5000,
         isClosable: true,
         position: "top-left",
       });
       setLoading(false)
-      
     })
   };
   return (

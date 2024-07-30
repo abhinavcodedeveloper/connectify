@@ -1,11 +1,12 @@
 
 .home{
     display: grid;
-    grid-template-columns: 22% 56% 22%;
+    grid-template-columns: 22% 52% 22%;
     grid-template-areas: 
     "nav nav nav"
     "sidebar centre sidefooter";   
-    /* background-color: #9896f1 !important; */
+    background-color: #c3bef0 !important;
+    width: 100% ;
     /* background: url("");  */
     /* background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); */
     
@@ -51,8 +52,14 @@
     align-items: center;
     flex-direction: column;
     margin: 20px auto;
+    position: sticky;
+    top: 100px;
+    
 }
 
+.sidefooterdiv ::-webkit-scrollbar{
+    display: none;
+}
 .like-unlike{
     display: flex ;
     /* align-items: flex-start; */
